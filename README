@@ -1,0 +1,3 @@
+# Fourier Drawer
+
+The fourier drawer web-app can draw any svg-path (provided via drag-and-drop) by using a sum of rotating vectors.
