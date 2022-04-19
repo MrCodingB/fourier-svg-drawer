@@ -1,0 +1,7 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" stroke-width="1" stroke="#000" fill="none">
+    <path d="M 50,150
+             A 100,100 0,0,1 250,150
+             A 100,100 0,0,1 450,150
+             Q 450,300 250,450
+             Q 50,300 50,150 z" />
+</svg>

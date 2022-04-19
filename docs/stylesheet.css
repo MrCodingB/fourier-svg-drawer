@@ -1,0 +1,48 @@
+html,
+body {
+    margin: 0;
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    color: #f1f1f1;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+body .top-bar {
+    flex: none;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+body .top-bar label {
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+body .top-bar label input[type="range"] {
+    width: 25rem;
+}
+
+body .top-bar label span {
+    margin-left: 1rem;
+}
+
+body canvas {
+    flex: 1;
+    width: unset !important;
+    height: unset !important;
+}
