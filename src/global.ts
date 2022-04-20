@@ -7,4 +7,9 @@ declare global {
          */
         readonly PI_2: number;
     }
+
+    interface Point {
+        x: number;
+        y: number;
+    }
 }

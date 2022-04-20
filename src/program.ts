@@ -129,13 +129,13 @@ export class Program {
             let n = this.points.count;
 
             for (const point of this.points) {
-                this.drawPoint(point[0], point[1], `rgba(255, 247, 0, ${n / this.points.count + 0.2})`);
+                this.drawPoint(point.x, point.y, `rgba(255, 247, 0, ${n / this.points.count + 0.2})`);
                 n--;
             }
         } else {
             const point = this.points.first();
             if (point !== undefined) {
-                this.drawPoint(point[0], point[1], '#fff700');
+                this.drawPoint(point.x, point.y, '#fff700');
             }
         }
 

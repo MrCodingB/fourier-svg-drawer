@@ -1,5 +1,5 @@
-export class Buffer implements Iterable<[number, number]> {
-    private readonly items: [number, number][] = [];
+export class Buffer implements Iterable<Point> {
+    private readonly items: Point[] = [];
 
     private i = -1;
 
@@ -15,7 +15,7 @@ export class Buffer implements Iterable<[number, number]> {
         this.clearResize(capacity);
     }
 
-    public get(i: number): [number, number] | undefined {
+    public get(i: number): Point | undefined {
         if (i >= this.length) {
             return undefined;
         }
@@ -28,7 +28,7 @@ export class Buffer implements Iterable<[number, number]> {
         return this.items[index];
     }
 
-    public first(): [number, number] | undefined {
+    public first(): Point | undefined {
         return this.length < 1 ? undefined : this.items[this.i];
     }
 
@@ -38,8 +38,8 @@ export class Buffer implements Iterable<[number, number]> {
             this.i = this.capacity - 1;
         }
 
-        this.items[this.i][0] = x;
-        this.items[this.i][1] = y;
+        this.items[this.i].x = x;
+        this.items[this.i].y = y;
 
         if (this.length < this.capacity) {
             this.length++;
@@ -51,7 +51,7 @@ export class Buffer implements Iterable<[number, number]> {
 
         if (capacity > this.capacity) {
             for (let i = this.capacity; i < capacity; i++) {
-                this.items.push([0, 0]);
+                this.items.push({ x: 0, y: 0 });
             }
         } else if (capacity < this.capacity) {
             const itemsToRemove = this.capacity - capacity;
@@ -64,7 +64,7 @@ export class Buffer implements Iterable<[number, number]> {
         this.length = 0;
     }
 
-    public *[Symbol.iterator](): Iterator<[number, number], any, undefined> {
+    public *[Symbol.iterator](): Iterator<Point, any, undefined> {
         if (this.length < 1 || this.i < 0) {
             return;
         }
